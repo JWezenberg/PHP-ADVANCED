@@ -4,6 +4,7 @@
 <head>
     <style>
         body{
+            color: <?php echo $_POST['Tekstkleur'] ?>;
             background-color: <?php echo $_POST['Achtergrondkleur'] ?>;
         }
         table,tr,td{
@@ -15,7 +16,14 @@
 
 <body>
 
-    <h1>Welkom</h1>
+    <?php
+        if ($_POST['Tekstkleur'] != $_POST['Achtergrondkleur']){
+            echo '<h1>Welkom</h1>';
+            }
+        else{
+            echo '<h1 style="color:white">Terug jij, zo werkt het niet he.</h1>';
+        }
+    ?>
 
     <table border='$info'>
         <thead>
@@ -29,15 +37,9 @@
                 <?php
                 $info = array('voornaam'=>'John', 'achternaam'=>'Wezenberg', 'leeftijd'=>'26', 'woonplaats'=>'Amsterdam');
 
-
-
-                   foreach ($info as $column) {
-                      echo "<td>$column</td>";
+                   foreach ($info as $key => $value) {
+                      echo "<tr><td>$key</td><td>$value</td></tr>";
                    }
-                  
-
-
-
 
                 ?>
             </tbody>
