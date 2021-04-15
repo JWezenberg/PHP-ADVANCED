@@ -14,6 +14,12 @@
     </style>
 </head>
 
+<?php
+function MaakRij($key, $value){
+    echo "<tr><td>$key</td><td>$value</td></tr>";
+}
+?>
+
 <body>
 
     <?php
@@ -38,7 +44,7 @@
                 $info = array('voornaam'=>'John', 'achternaam'=>'Wezenberg', 'leeftijd'=>'26', 'woonplaats'=>'Amsterdam');
 
                    foreach ($info as $key => $value) {
-                      echo "<tr><td>$key</td><td>$value</td></tr>";
+                      MaakRij($key, $value);
                    }
 
                 ?>
